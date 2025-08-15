@@ -1,11 +1,11 @@
 const API_URL = "http://localhost:8080/apiCategory"
 
-async function getCategories(){
+export async function getCategories(){
     const res = await fetch(`${API_URL}/getDataCategories`);
     return res.json();
 }
 
-async function createCategory(data){
+export async function createCategory(data){
     await fecth(`${API_URL}/newCategory`,{
         method: "POST",
         headers:{"Content-Type": "application/json"},
@@ -13,7 +13,7 @@ async function createCategory(data){
     });
 }
 
-async function updateCategory(id, data){
+export async function updateCategory(id, data){
     await fecth(`${API_URL}/updateCategory/${id}`,{
         method: "PUT",
         headers:{"Content-Type": "application/json"},
@@ -21,7 +21,7 @@ async function updateCategory(id, data){
     });
 }
 
-async function deleteCategory(id){
+export async function deleteCategory(id){
     await fetch(`${API_URL}/deleteCategory/${id}`,{
         method:"DELETE"
     });
