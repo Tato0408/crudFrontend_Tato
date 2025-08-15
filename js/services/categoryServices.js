@@ -6,7 +6,7 @@ export async function getCategories(){
 }
 
 export async function createCategory(data){
-    await fecth(`${API_URL}/newCategory`,{
+    await fetch(`${API_URL}/newCategory`,{
         method: "POST",
         headers:{"Content-Type": "application/json"},
         body: JSON.stringify(data)
@@ -14,7 +14,7 @@ export async function createCategory(data){
 }
 
 export async function updateCategory(id, data){
-    await fecth(`${API_URL}/updateCategory/${id}`,{
+    await fetch(`${API_URL}/updateCategory/${id}`,{
         method: "PUT",
         headers:{"Content-Type": "application/json"},
         body: JSON.stringify(data)
